@@ -243,86 +243,149 @@ nav.scrolled { padding: 12px 56px; box-shadow: 0 2px 24px rgba(0,0,0,0.4); }
 }
 .hero-btn:hover { opacity: 0.75; }
 
-/* Dashboard mockup */
-.hero-visual { position: relative; animation: fadeUp 0.8s 0.2s ease both; }
-.dashboard {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 32px 80px rgba(26,26,30,0.22), 0 0 0 0.5px rgba(200,204,216,0.15);
-  overflow: hidden;
-  transform: perspective(1100px) rotateY(-5deg) rotateX(2deg);
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+/* Phone mockups */
+.hero-visual {
+  position: relative; animation: fadeUp 0.8s 0.2s ease both;
+  display: flex; align-items: flex-start; justify-content: center; gap: 14px;
 }
-.dashboard:hover { transform: perspective(1100px) rotateY(-1deg) rotateX(1deg); }
-.dash-top {
-  background: var(--navy); padding: 14px 20px;
-  display: flex; align-items: center; gap: 8px;
+.phone {
+  width: 252px; background: #111; border-radius: 44px;
+  padding: 3px;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.30), 0 0 0 0.5px rgba(255,255,255,0.06) inset;
+  flex-shrink: 0;
 }
-.dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-.dot-r { background: #FF5F57; }
-.dot-y { background: #FFBD2E; }
-.dot-g { background: #28C840; }
-.dash-title {
-  margin-left: 8px; font-size: 12px; font-weight: 500;
-  color: rgba(255,255,255,0.55);
-  flex: 1; text-align: center;
+.phone-left  { margin-top: 36px; }
+.phone-right { margin-top: 0; }
+.phone-inner {
+  border-radius: 42px; overflow: hidden;
+  background: #F5F5F5; display: flex; flex-direction: column;
 }
-.dash-body { padding: 22px; }
-.dash-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
-.dash-greeting {
-  font-size: 17px; font-weight: 600; color: var(--black); letter-spacing: -0.01em;
+.phone-status {
+  background: #0A0A0A; display: flex; align-items: center;
+  justify-content: space-between; padding: 11px 20px 5px;
+  font-size: 11px; font-weight: 600; color: #fff;
 }
-.dash-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.dash-notif {
-  background: rgba(0,102,204,0.1); border: 1px solid rgba(0,102,204,0.2);
-  color: var(--accent-dark); font-size: 10px; font-weight: 600;
-  padding: 4px 10px; border-radius: 100px;
+.phone-status-icons { display: flex; align-items: center; gap: 5px; font-size: 10px; }
+.phone-header { background: #0A0A0A; padding: 8px 16px 14px; }
+.ph-logo { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; }
+.ph-logo-icon {
+  width: 26px; height: 26px; border-radius: 50%; background: #0066CC;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-.dash-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 18px; }
-.dash-card {
-  background: var(--cream); border-radius: 10px;
-  padding: 12px 10px; border: 1px solid var(--warm);
-  text-align: center;
+.ph-logo-name { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.ph-logo-name .kin { color: #fff; }
+.ph-logo-name .care { color: #CCE5FF; }
+.ph-header-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; }
+.ph-greeting { font-size: 9.5px; color: rgba(255,255,255,0.45); margin-bottom: 1px; }
+.ph-family-name { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.025em; line-height: 1.1; }
+.ph-avatars { display: flex; }
+.ph-avatar {
+  width: 26px; height: 26px; border-radius: 50%; background: #3A3A3A;
+  border: 1.5px solid #0A0A0A; display: flex; align-items: center; justify-content: center;
+  font-size: 7.5px; font-weight: 700; color: #fff; flex-shrink: 0;
+  margin-left: -6px;
 }
-.dash-card-icon { font-size: 16px; margin-bottom: 4px; }
-.dash-card-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; }
-.dash-card-val { font-size: 16px; font-weight: 700; color: var(--navy); margin-top: 2px; }
-.dash-section-title { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.dash-items { display: flex; flex-direction: column; gap: 7px; }
-.dash-item {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--white); border-radius: 9px; padding: 9px 12px;
-  border: 1px solid var(--warm);
+.ph-avatar:first-child { margin-left: 0; }
+.ph-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-top: 4px;
 }
-.dash-item-icon {
-  width: 30px; height: 30px; border-radius: 7px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; flex-shrink: 0;
+.ph-stat {
+  background: #1C1C1C; border-radius: 9px; padding: 7px 4px; text-align: center;
 }
-.icon-sage { background: rgba(0,102,204,0.10); }
-.icon-gold { background: rgba(0,102,204,0.06); }
-.icon-terra { background: rgba(0,68,153,0.08); }
-.icon-navy { background: rgba(0,0,0,0.05); }
-.dash-item-info { flex: 1; min-width: 0; }
-.dash-item-name { font-size: 12px; font-weight: 600; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.dash-item-time { font-size: 10px; color: var(--muted); }
-.dash-badge {
-  font-size: 9px; font-weight: 700; padding: 3px 8px;
-  border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+.ph-stat.active { background: #0066CC; }
+.ph-stat-val { font-size: 13px; font-weight: 700; color: #fff; line-height: 1; }
+.ph-stat-label { font-size: 7.5px; color: rgba(255,255,255,0.5); margin-top: 2px; line-height: 1.2; }
+.phone-body { background: #F5F5F5; flex: 1; }
+.ph-datebar {
+  display: flex; align-items: center; gap: 5px;
+  padding: 7px 12px; background: #fff; border-bottom: 1px solid #E8E8E8;
+  font-size: 9.5px; color: #0066CC; font-weight: 500;
 }
-.badge-green { background: rgba(0,102,204,0.1); color: var(--accent-dark); }
-.badge-gold { background: var(--surface); color: var(--dark); }
-.badge-terra { background: var(--surface); color: var(--dark); }
-
-.dash-family-row { display: flex; gap: 6px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--warm); align-items: center; }
-.family-avatar {
-  width: 26px; height: 26px; border-radius: 50%;
-  background: var(--warm); border: 2px solid var(--cream);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; flex-shrink: 0;
+.ph-section-label {
+  font-size: 8px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+  color: #767676; padding: 8px 12px 5px;
 }
-.family-avatar.online { border-color: var(--sage); }
-.dash-family-text { font-size: 10px; color: var(--muted); margin-left: 4px; }
+.ph-card {
+  background: #fff; border-radius: 10px; margin: 0 8px 7px;
+  padding: 9px 11px; border: 1px solid #E8E8E8;
+}
+.ph-card-top { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.ph-card-icon {
+  width: 26px; height: 26px; border-radius: 7px; background: rgba(0,102,204,0.09);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.ph-card-info { flex: 1; min-width: 0; }
+.ph-card-name { font-size: 10.5px; font-weight: 600; color: #0A0A0A; }
+.ph-card-provider { font-size: 9px; color: #767676; }
+.ph-card-time-col { text-align: right; }
+.ph-when { font-size: 8.5px; color: #0066CC; font-weight: 500; }
+.ph-time { font-size: 11px; font-weight: 600; color: #0A0A0A; }
+.ph-card-bottom { display: flex; align-items: center; justify-content: space-between; }
+.ph-badge { font-size: 8px; font-weight: 600; padding: 2px 8px; border-radius: 100px; }
+.ph-badge-green { background: #EDFAF1; color: #1B7B3A; }
+.ph-card-amount { font-size: 9.5px; font-weight: 500; color: #3A3A3A; }
+.ph-card-note { font-size: 8.5px; color: #767676; margin-top: 4px; }
+.ph-banner {
+  margin: 0 8px 8px; background: #FFFBF0; border-left: 3px solid #F59E0B;
+  border-radius: 0 8px 8px 0; padding: 7px 10px;
+  font-size: 9.5px; font-weight: 500; color: #B45309;
+  display: flex; align-items: center; gap: 5px;
+}
+.phone-tabbar {
+  background: #fff; border-top: 1px solid #E8E8E8;
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 8px 0 13px;
+}
+.ph-tab {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 8px; color: #767676; font-weight: 400;
+}
+.ph-tab.active { color: #0A0A0A; font-weight: 600; }
+.ph-tab-icon { font-size: 16px; opacity: 0.4; }
+.ph-tab.active .ph-tab-icon { opacity: 1; }
+.ph-page-title {
+  font-size: 20px; font-weight: 700; color: #fff;
+  letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 2px;
+}
+.ph-page-sub { font-size: 9px; color: rgba(255,255,255,0.4); }
+.ph-filters {
+  display: flex; gap: 5px; padding: 9px 8px 7px; background: #fff;
+  border-bottom: 1px solid #E8E8E8; overflow: hidden;
+}
+.ph-filter {
+  display: flex; align-items: center; gap: 3px;
+  padding: 3px 9px; border-radius: 100px; font-size: 9.5px; font-weight: 500;
+  background: #F5F5F5; color: #3A3A3A; border: 1px solid #E8E8E8; white-space: nowrap;
+}
+.ph-filter.active { background: #0A0A0A; color: #fff; border-color: #0A0A0A; }
+.ph-provider {
+  background: #fff; margin: 8px 8px 0; border-radius: 10px;
+  border: 1px solid #E8E8E8; overflow: hidden;
+}
+.ph-provider-head {
+  display: flex; align-items: center; gap: 8px; padding: 10px 11px 5px;
+}
+.ph-provider-icon {
+  width: 30px; height: 30px; border-radius: 50%; background: #F5F5F5;
+  border: 1px solid #E8E8E8; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 13px;
+}
+.ph-provider-info { flex: 1; }
+.ph-provider-name { font-size: 11px; font-weight: 600; color: #0A0A0A; }
+.ph-provider-rating { font-size: 8.5px; color: #767676; margin-top: 1px; }
+.ph-provider-price { font-size: 9.5px; font-weight: 600; color: #0066CC; white-space: nowrap; }
+.ph-provider-body { padding: 0 11px 10px; }
+.ph-provider-desc { font-size: 9px; color: #3A3A3A; line-height: 1.5; margin-bottom: 3px; }
+.ph-provider-location { font-size: 8.5px; color: #767676; margin-bottom: 5px; }
+.ph-provider-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+.ph-tag {
+  font-size: 8px; padding: 2px 7px; border-radius: 100px;
+  background: #F5F5F5; color: #3A3A3A; border: 1px solid #E8E8E8;
+}
+.ph-book-btn {
+  display: block; width: 100%; background: #0066CC; color: #fff; text-align: center;
+  font-size: 10px; font-weight: 600; padding: 7px; border-radius: 7px; border: none; cursor: pointer;
+}
 
 /* ─── TRUST BAR ─── */
 .trust {
@@ -835,7 +898,9 @@ footer {
   .nav-cta { display: none; }
   .hamburger { display: flex; }
   .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 48px; }
-  .dashboard { transform: none !important; }
+  .hero-visual { flex-direction: column; align-items: center; }
+  .phone-left, .phone-right { margin-top: 0; }
+  .phone-right { display: none; }
   .problem { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
   .how { padding: 70px 24px; }
   .steps { grid-template-columns: 1fr; }
@@ -968,86 +1033,221 @@ footer {
   </div>
 
   <div class="hero-visual">
-    <div class="dashboard">
-      <div class="dash-top">
-        <div class="dot dot-r"></div>
-        <div class="dot dot-y"></div>
-        <div class="dot dot-g"></div>
-        <span class="dash-title">kincare.io — Family Dashboard</span>
-      </div>
-      <div class="dash-body">
-        <div class="dash-header-row">
-          <div>
-            <div class="dash-greeting">Good morning, Hansen family 👋</div>
-            <div class="dash-sub">Thursday, 24 April · Everything is on schedule</div>
-          </div>
-          <div class="dash-notif">2 new</div>
-        </div>
-        <div class="dash-cards">
-          <div class="dash-card">
-            <div class="dash-card-icon"><svg class="icon" width="14" height="14"><use href="#i-calendar"/></svg></div>
-            <div class="dash-card-label">Today</div>
-            <div class="dash-card-val">3</div>
-          </div>
-          <div class="dash-card">
-            <div class="dash-card-icon"><svg class="icon" width="14" height="14"><use href="#i-check"/></svg></div>
-            <div class="dash-card-label">Done</div>
-            <div class="dash-card-val">1/3</div>
-          </div>
-          <div class="dash-card">
-            <div class="dash-card-icon"><svg class="icon" width="14" height="14"><use href="#i-users"/></svg></div>
-            <div class="dash-card-label">Family</div>
-            <div class="dash-card-val">3</div>
-          </div>
-          <div class="dash-card">
-            <div class="dash-card-icon"><svg class="icon" width="14" height="14"><use href="#i-star"/></svg></div>
-            <div class="dash-card-label">Rating</div>
-            <div class="dash-card-val">4.9</div>
+
+    <!-- LEFT PHONE: Dashboard -->
+    <div class="phone phone-left">
+      <div class="phone-inner">
+        <div class="phone-status">
+          <span>22:21</span>
+          <div class="phone-status-icons">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><rect x="0" y="4" width="2" height="6" rx="0.5" fill="white" opacity="0.4"/><rect x="3" y="3" width="2" height="7" rx="0.5" fill="white" opacity="0.6"/><rect x="6" y="1.5" width="2" height="8.5" rx="0.5" fill="white" opacity="0.8"/><rect x="9" y="0" width="2" height="10" rx="0.5" fill="white"/></svg>
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M6.5 2C8.5 2 10.3 2.8 11.6 4.1L12.8 2.9C11.1 1.1 8.9 0 6.5 0C4.1 0 1.9 1.1 0.2 2.9L1.4 4.1C2.7 2.8 4.5 2 6.5 2Z" fill="white"/><path d="M6.5 5C7.8 5 8.9 5.5 9.7 6.3L10.9 5.1C9.8 4 8.2 3.3 6.5 3.3C4.8 3.3 3.2 4 2.1 5.1L3.3 6.3C4.1 5.5 5.2 5 6.5 5Z" fill="white"/><circle cx="6.5" cy="8.5" r="1.5" fill="white"/></svg>
+            <span style="font-size:10px">89%</span>
           </div>
         </div>
-        <div class="dash-section-title">Today's appointments</div>
-        <div class="dash-items">
-          <div class="dash-item">
-            <div class="dash-item-icon icon-sage"><svg class="icon" width="16" height="16"><use href="#i-car"/></svg></div>
-            <div class="dash-item-info">
-              <div class="dash-item-name">Transport to doctor</div>
-              <div class="dash-item-time">10:00 · Jens Transport Ltd</div>
+        <div class="phone-header">
+          <div class="ph-logo">
+            <div class="ph-logo-icon">
+              <svg width="15" height="12" viewBox="0 0 30 24" fill="none">
+                <circle cx="20" cy="8" r="5" fill="rgba(255,255,255,0.4)"/>
+                <path d="M13 24 C13 18 15.5 15 20 15 C24.5 15 27 18 27 24" fill="rgba(255,255,255,0.4)"/>
+                <circle cx="10" cy="8" r="5" fill="#fff"/>
+                <path d="M3 24 C3 18 5.5 15 10 15 C14.5 15 17 18 17 24" fill="#fff"/>
+              </svg>
             </div>
-            <span class="dash-badge badge-green">Confirmed</span>
+            <div class="ph-logo-name"><span class="kin">Kin</span><span class="care">Care</span></div>
           </div>
-          <div class="dash-item">
-            <div class="dash-item-icon icon-gold"><svg class="icon" width="16" height="16"><use href="#i-food"/></svg></div>
-            <div class="dash-item-info">
-              <div class="dash-item-name">Meal delivery</div>
-              <div class="dash-item-time">12:30 · FreshMeals</div>
+          <div class="ph-header-row">
+            <div>
+              <div class="ph-greeting">Good morning</div>
+              <div class="ph-family-name">Smith family</div>
             </div>
-            <span class="dash-badge badge-green">Delivered ✓</span>
+            <div class="ph-avatars">
+              <div class="ph-avatar">ME</div>
+              <div class="ph-avatar">AS</div>
+              <div class="ph-avatar">LH</div>
+            </div>
           </div>
-          <div class="dash-item">
-            <div class="dash-item-icon icon-terra"><svg class="icon" width="16" height="16"><use href="#i-clean"/></svg></div>
-            <div class="dash-item-info">
-              <div class="dash-item-name">Cleaning</div>
-              <div class="dash-item-time">14:00 · Clean & Bright</div>
-            </div>
-            <span class="dash-badge badge-gold">In 2 hours</span>
-          </div>
-          <div class="dash-item">
-            <div class="dash-item-icon icon-navy"><svg class="icon" width="16" height="16"><use href="#i-pill"/></svg></div>
-            <div class="dash-item-info">
-              <div class="dash-item-name">Medication reminder</div>
-              <div class="dash-item-time">20:00 · Automatic</div>
-            </div>
-            <span class="dash-badge badge-terra">Scheduled</span>
+          <div class="ph-stats">
+            <div class="ph-stat active"><div class="ph-stat-val">3</div><div class="ph-stat-label">Today</div></div>
+            <div class="ph-stat"><div class="ph-stat-val">3</div><div class="ph-stat-label">Upcoming</div></div>
+            <div class="ph-stat"><div class="ph-stat-val">4.9</div><div class="ph-stat-label">Avg rating</div></div>
+            <div class="ph-stat"><div class="ph-stat-val">1720</div><div class="ph-stat-label">kr denne uge</div></div>
           </div>
         </div>
-        <div class="dash-family-row">
-          <div class="family-avatar online">S</div>
-          <div class="family-avatar online">L</div>
-          <div class="family-avatar">M</div>
-          <div class="dash-family-text">Sarah and Lisa are online · Meg offline</div>
+        <div class="phone-body">
+          <div class="ph-datebar">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6l9-3 9 3M3 18l9 3 9-3"/></svg>
+            Today · Saturday 25 April
+          </div>
+          <div class="ph-section-label">Today's Schedule</div>
+          <div class="ph-card">
+            <div class="ph-card-top">
+              <div class="ph-card-icon">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div class="ph-card-info">
+                <div class="ph-card-name">Transport to doctor</div>
+                <div class="ph-card-provider">Jens Transport</div>
+              </div>
+              <div class="ph-card-time-col">
+                <div class="ph-when">Today</div>
+                <div class="ph-time">10:00</div>
+              </div>
+            </div>
+            <div class="ph-card-bottom">
+              <span class="ph-badge ph-badge-green">Completed</span>
+              <span class="ph-card-amount">180 kr</span>
+            </div>
+            <div class="ph-card-note">Aftale på Rigshospitalet, Dr. Larsen</div>
+          </div>
+          <div class="ph-card">
+            <div class="ph-card-top">
+              <div class="ph-card-icon" style="background:rgba(0,102,204,0.06);">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0066CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              </div>
+              <div class="ph-card-info">
+                <div class="ph-card-name">Meal delivery</div>
+                <div class="ph-card-provider">FreshMeals</div>
+              </div>
+              <div class="ph-card-time-col">
+                <div class="ph-when">Today</div>
+                <div class="ph-time">12:30</div>
+              </div>
+            </div>
+            <div class="ph-card-bottom">
+              <span class="ph-badge ph-badge-green">Delivered ✓</span>
+              <span class="ph-card-amount">95 kr</span>
+            </div>
+            <div class="ph-card-note">Low-salt option as requested</div>
+          </div>
+          <div class="ph-banner">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6l9-3 9 3M3 18l9 3 9-3"/></svg>
+            Provider is on the way
+          </div>
+        </div>
+        <div class="phone-tabbar">
+          <div class="ph-tab">
+            <svg class="ph-tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="11" width="4" height="10" rx="1"/><path d="M7 7l5-4 5 4"/><rect x="17" y="11" width="4" height="10" rx="1"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg>
+            Register
+          </div>
+          <div class="ph-tab">
+            <svg class="ph-tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Services
+          </div>
+          <div class="ph-tab active">
+            <svg class="ph-tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Dashboard
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- RIGHT PHONE: Service Providers -->
+    <div class="phone phone-right">
+      <div class="phone-inner">
+        <div class="phone-status">
+          <span>22:21</span>
+          <div class="phone-status-icons">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><rect x="0" y="4" width="2" height="6" rx="0.5" fill="white" opacity="0.4"/><rect x="3" y="3" width="2" height="7" rx="0.5" fill="white" opacity="0.6"/><rect x="6" y="1.5" width="2" height="8.5" rx="0.5" fill="white" opacity="0.8"/><rect x="9" y="0" width="2" height="10" rx="0.5" fill="white"/></svg>
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none"><path d="M6.5 2C8.5 2 10.3 2.8 11.6 4.1L12.8 2.9C11.1 1.1 8.9 0 6.5 0C4.1 0 1.9 1.1 0.2 2.9L1.4 4.1C2.7 2.8 4.5 2 6.5 2Z" fill="white"/><path d="M6.5 5C7.8 5 8.9 5.5 9.7 6.3L10.9 5.1C9.8 4 8.2 3.3 6.5 3.3C4.8 3.3 3.2 4 2.1 5.1L3.3 6.3C4.1 5.5 5.2 5 6.5 5Z" fill="white"/><circle cx="6.5" cy="8.5" r="1.5" fill="white"/></svg>
+            <span style="font-size:10px">89%</span>
+          </div>
+        </div>
+        <div class="phone-header">
+          <div class="ph-logo">
+            <div class="ph-logo-icon">
+              <svg width="15" height="12" viewBox="0 0 30 24" fill="none">
+                <circle cx="20" cy="8" r="5" fill="rgba(255,255,255,0.4)"/>
+                <path d="M13 24 C13 18 15.5 15 20 15 C24.5 15 27 18 27 24" fill="rgba(255,255,255,0.4)"/>
+                <circle cx="10" cy="8" r="5" fill="#fff"/>
+                <path d="M3 24 C3 18 5.5 15 10 15 C14.5 15 17 18 17 24" fill="#fff"/>
+              </svg>
+            </div>
+            <div class="ph-logo-name"><span class="kin">Kin</span><span class="care">Care</span></div>
+          </div>
+          <div class="ph-page-title">Service providers</div>
+          <div class="ph-page-sub">All providers are screened and vetted</div>
+        </div>
+        <div class="phone-body">
+          <div class="ph-filters">
+            <div class="ph-filter active">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              All
+            </div>
+            <div class="ph-filter">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6l9-3 9 3M3 18l9 3 9-3"/></svg>
+              Transport
+            </div>
+            <div class="ph-filter">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+              Meals
+            </div>
+            <div class="ph-filter">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M8 4a8 8 0 0 1 12 12"/></svg>
+              Cleaning
+            </div>
+          </div>
+          <div class="ph-provider">
+            <div class="ph-provider-head">
+              <div class="ph-provider-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#767676" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              </div>
+              <div class="ph-provider-info">
+                <div class="ph-provider-name">Jens Transport</div>
+                <div class="ph-provider-rating">★ 4.9 · 127 reviews</div>
+              </div>
+              <div class="ph-provider-price">180 kr/tur</div>
+            </div>
+            <div class="ph-provider-body">
+              <div class="ph-provider-desc">Reliable door-to-door transport for medical appointments, shopping and social activities.</div>
+              <div class="ph-provider-location">— København og omegn</div>
+              <div class="ph-provider-tags">
+                <span class="ph-tag">Same-day booking</span>
+                <span class="ph-tag">Wheelchair accessible</span>
+              </div>
+              <button class="ph-book-btn">Book this provider</button>
+            </div>
+          </div>
+          <div class="ph-provider">
+            <div class="ph-provider-head">
+              <div class="ph-provider-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#767676" stroke-width="1.8" stroke-linecap="round"><path d="M3 12h18M3 6l9-3 9 3M3 18l9 3 9-3"/></svg>
+              </div>
+              <div class="ph-provider-info">
+                <div class="ph-provider-name">Nordic Drive</div>
+                <div class="ph-provider-rating">★ 4.7 · 89 reviews</div>
+              </div>
+              <div class="ph-provider-price">165 kr/tur</div>
+            </div>
+            <div class="ph-provider-body">
+              <div class="ph-provider-desc">Professional transport service with fixed pricing and experienced drivers.</div>
+              <div class="ph-provider-location">— Storkøbenhavn</div>
+              <div class="ph-provider-tags">
+                <span class="ph-tag">Fixed pricing</span>
+                <span class="ph-tag">English speaking</span>
+              </div>
+              <button class="ph-book-btn">Book this provider</button>
+            </div>
+          </div>
+        </div>
+        <div class="phone-tabbar">
+          <div class="ph-tab">
+            <svg class="ph-tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="11" width="4" height="10" rx="1"/><path d="M7 7l5-4 5 4"/><rect x="17" y="11" width="4" height="10" rx="1"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg>
+            Register
+          </div>
+          <div class="ph-tab active">
+            <svg class="ph-tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Services
+          </div>
+          <div class="ph-tab">
+            <svg class="ph-tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Dashboard
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
